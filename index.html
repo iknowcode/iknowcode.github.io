@@ -1,328 +1,487 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
-    <title>Himachal G.K</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style/styles.css') }}">
+
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet"> -->
+  <title>Himachal G.K Himachal General Knowledge</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+  <!-- <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet"> -->
+
+  <style>
+    .hpgk {
+      font-family: 'Lora', sans-serif;
+    }
+
+    .active {
+      display: block;
+    }
+
+    .content {
+      font-family: 'Lora', serif;
+      font-size: 16px;
+      letter-spacing: -0.003em;
+      font-weight: 400;
+      line-height: 24px;
+    }
+
+    .homeline {
+      font-family: 'Merriweather, serif';
+      font-size: medium;
+    }
+
+    .heart {
+      fill: rgb(177, 177, 177);
+      margin-left: 5px;
+      top: 5px;
+      width: 15px;
+      animation: pulse 1s ease infinite;
+    }
+
+    .carousel-open:checked+.carousel-item {
+      position: static;
+      opacity: 100;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.3);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+  </style>
+
 </head>
 
 
-<body>
-    
-    <header class="text-gray-700 body-font">
-        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-          <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+<body class="mx-auto leading-normal tracking-normal">
 
-          <img class="lg:w-15 md:w-10 object-cover object-right rounded-lg md:mt-0 mt-12" src= "images/logo2.png" alt="step">
 
-            <span class="ml-3 text-xl"> Himachal G.K </span>
+  <header class="sticky z-50 mt-0 top-0 flex-row align-items bg-gray-900 py-2 mx-auto" id="head">
+
+
+    <div class="hpgk px-3 flex items-center text-gray-500 bg-gray-900 justify-between font-bold">
+      myHPGK
+
+      <div id="hamburgerbtn" class="md:hidden h-auto mt-1">
+        <svg class="fill-current" viewBox="0 0 100 80" width="40" height="16">
+          <rect width="100" height="16"></rect>
+          <rect y="30" width="100" height="16"></rect>
+          <rect y="60" width="100" height="16"></rect>
+        </svg>
+      </div>
+
+      <ul class="hidden md:flex lg:flex justify-between" id="PcMenu">
+        <li class="cursor-pointer pr-5 p-2 items-center text-gray-500 font-semibold"><a href="/new"> Home </a></li>
+        <li class="cursor-pointer pr-5 p-2 items-center text-gray-500 font-semibold"><a href="/plan0"> Subscribe </a></li>
+        <li class="cursor-pointer pr-5 p-2 items-center text-gray-500 font-semibold"><a href="/blogs"> Blogs     </a></li>
+        <li class="cursor-pointer pr-5 p-2 items-center text-gray-500 font-semibold"><a href="/about"> About     </a></li>
+      </ul>
+
+    </div>
+
+    <ul class="hidden flex justify-between bg-gray-800" id="mobileMenu">
+      <a href="/new" >  <li class="cursor-pointer pr-5 py-2 px-3 text-gray-500 font-semibold">     Home</li> </a>
+      <a href="/plan0" >  <li class="cursor-pointer pr-5 py-2 px-3 text-gray-500 font-semibold">   Subscribe</li> </a>
+      <a href="/blogs" >  <li class="cursor-pointer pr-5 py-2 px-3 text-gray-500 font-semibold">   Blogs    </li> </a>
+      <a href="/about" >  <li class="cursor-pointer pr-5 py-2 px-3 text-gray-500 font-semibold">   About    </li> </a>
+    </ul>
+
+
+  </header>
+
+
+  <section class="pb-20 md:pt-12 pt-4 bg-gray-300 overflow-hidden">
+
+    <div class="container mx-auto px-4">
+
+      <div class="flex flex-wrap">  
+
+        <div class="cursor-pointer lg:pt-6 pt-6 w-full md:w-4/12 px-4 text-center">
+          <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
+            <div class="px-4 py-5 flex-auto">
+              <div>
+
+                <img class=" inline-flex items-center transition duration-200 ease-in-out transform hover:-translate-y-1 hover:scale-110 justify-center w-12 h-12 mb-5 shadow-lg rounded" src= {{ url_for('static',filename ="images/sample/pdf.png") }}>
+
+
+              </div>
+              <h6 class="text-xl font-semibold">PDF Booklets</h6>
+              <p class="mt-2 mb-4 text-gray-600">
+
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="cursor-pointer w-full pt-6 md:w-4/12 px-4 text-center">
+          <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
+            <div class="px-4 py-5 flex-auto">
+              <div>
+                <img class=" inline-flex items-center transition duration-200 ease-in-out transform hover:-translate-y-1 hover:scale-110 justify-center w-12 h-12 mb-5 shadow-lg rounded" src= {{ url_for('static',filename ="images/sample/newsletter.png") }}>
+              </div>
+              <h6 class="text-xl font-semibold">G.K Newsletter</h6>
+              <p class="mt-2 mb-4 text-gray-600">
+
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="cursor-pointer pt-6 w-full md:w-4/12 px-4 text-center">
+          <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
+            <div class="px-4 py-5 flex-auto">
+              <div>
+                <img class=" inline-flex items-center transition duration-200 ease-in-out transform hover:-translate-y-1 hover:scale-110 justify-center w-12 h-12 mb-5 shadow-lg rounded" src= {{ url_for('static',filename ="images/sample/test.png") }}>
+              </div>
+              <h6 class="text-xl font-semibold">Mock Test Series</h6>
+              <p class="mt-2 mb-4 text-gray-600">
+
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="cursor-pointer pt-6 w-full md:w-4/12 px-4 text-center">
+          <a href="/index">
+          <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
+            <div class="px-4 py-5 flex-auto">
+              <div>
+                <img class=" inline-flex items-center transition duration-200 ease-in-out transform hover:-translate-y-1 hover:scale-110 justify-center w-12 h-12 mb-5 shadow-lg rounded" src= {{ url_for('static',filename ="images/sample/syl.png") }}>
+
+              </div>
+              <h6 class="text-xl font-semibold">Syllabus</h6>
+              <p class="mt-2 mb-4 text-gray-600">
+
+              </p>
+            </div>
+          </div>
           </a>
-          <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
-            <a class="mr-5 hover:text-gray-900"> "Working smart is harder than working hard" </a>
-            
-          </nav>
+        </div>
+
+        <div class="cursor-pointer pt-6 w-full md:w-4/12 px-4 text-center">
+          <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
+            <div class="px-4 py-5 flex-auto">
+              <div>
+                <img class=" inline-flex items-center transition duration-200 ease-in-out transform hover:-translate-y-1 hover:scale-110 justify-center w-12 h-12 mb-5 shadow-lg rounded" src= {{ url_for('static',filename ="images/sample/cur2.png") }} >
+              </div>
+              <h6 class="text-xl font-semibold">Current Affairs</h6>
+              <p class="mt-2 mb-4 text-gray-600">
+
+              </p>
+            </div>
+          </div>
+        </div>
+
+        
+        <div class="cursor-pointer w-full pt-6 md:w-4/12 px-4 text-center">
+          <a href="/blogs/">
+          <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
+            <div class="px-4 py-5 flex-auto">
+              <div>
+                <img class=" inline-flex items-center transition duration-200 ease-in-out transform hover:-translate-y-1 hover:scale-110 justify-center w-12 h-12 mb-5 shadow-lg rounded-lg" src= {{ url_for('static',filename ="images/sample/blog.png") }}>
+              </div>
+              <h6 class="text-xl font-semibold">Blogs & Articles </h6>
+              <p class="mt-2 mb-4 text-gray-600">
+
+              </p>
+            </div>
+          </div>
+          </a>
+        </div>
+        
+
+
+      </div>
+      <div class="flex flex-wrap items-center mt-32">
+        <div class="w-full md:w-5/12 px-4 mr-auto ml-auto">
+          <!-- <div
+            class="text-gray-600 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-gray-100">
+            <i class="fas fa-user-friends text-xl"></i>
+          </div> -->
+          <h3 class="text-3xl mb-2 font-semibold leading-normal">
+            Read daily, Learn easy
+          </h3>
+          <p class="text-lg font-light leading-relaxed mt-4 mb-4 text-gray-700">
+            Don't let your uses guess by attaching tooltips and popoves to
+            any element. Just make sure you enable them first via
+            JavaScript.
+          </p>
+          <p class="text-lg font-light leading-relaxed mt-0 mb-4 text-gray-700">
+            The kit comes with three pre-built pages to help you get started
+            faster. You can change the text and images and you're good to
+            go. Just make sure you enable them first via JavaScript.
+          </p>
          
         </div>
-      </header>
-      <hr>
-      <section class="text-gray-700 body-font">
 
-        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-          <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
-            <!-- <span class="ml-3 text-xl">tailblocks</span> -->
-          </a>
-          <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
-          
-            <a class="mr-5 hover:text-gray-900">Blogs</a>
-            <a class="mr-5 hover:text-gray-900">Goals</a>
-            <a class="mr-5 hover:text-gray-900">About</a>
-          </nav>
-          
-        </div>
-
-
-        <div class="container px-5 py-24 mx-auto flex flex-wrap items-center">
-          <div class="lg:w-3/5 md:w-1/2 md:pr-16 lg:pr-0 pr-0">
-            <h1 class="title-font font-medium text-3xl text-gray-900"> Fill up your caffine smart bud, take a sip of your daily Himachali knowledge.</h1>
-            <p class="leading-relaxed mt-4">It will never take you more than a mug of coffee to finish reading our breifings which are precisely condensed for your morning. It's a habit you know.</p>
-          </div>
-          <div class="lg:w-2/6 md:w-1/2 bg-gray-200 rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0">
-            <h2 class="text-gray-900 text-lg font-medium title-font mb-5">Sign Up (For Free) </h2>
-            <form action="/" method="post">
-              <input class="bg-white rounded border border-gray-400 focus:outline-none focus:border-teal-500 text-base px-4 py-2 mb-4" name = "email1"  placeholder="Email" type="text">
-              <input class="bg-white rounded border border-gray-400 focus:outline-none focus:border-teal-500 text-base px-4 py-2 mb-4" name = "email2" placeholder="Re-enter Email" type="email">
-              <button class="text-white bg-teal-500 border-0 py-2 px-8 focus:outline-none hover:bg-teal-600 rounded text-lg">Subscribe</button>
-            </form>
-              <p class="text-xs text-gray-500 mt-3"> Let's get better everyday </p>
-          </div>
-        </div>
-      </section>
-      <!-- <hr> -->
-
-
-
-
-      <section class="text-gray-700 body-font">
-        <div class="container px-5 py-24 mx-auto">
-          <div class="flex flex-wrap -m-4">
-            <div class="p-4 md:w-1/3">
-              <div class="h-full border-2 border-gray-200 rounded-lg overflow-hidden">
-                <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="images/mountains.jpg" alt="blog">
-                <div class="p-6">
-                  <h2 class="tracking-widest text-xs title-font font-medium text-gray-500 mb-1">Polpular Blog</h2>
-                  <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Himachal and its Pride</h1>
-                  <p class="leading-relaxed mb-3">Read what makes himachal and its mountains so pride so elegent so beautiful.</p>
-                  <div class="flex items-center flex-wrap ">
-                    <a class="text-teal-500 inline-flex items-center md:mb-2 lg:mb-0">Learn More
-                      <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M5 12h14"></path>
-                        <path d="M12 5l7 7-7 7"></path>
-                      </svg>
-                    </a>
-                    <span class="text-gray-600 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-300">
-                      <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                        <circle cx="12" cy="12" r="3"></circle>
-                      </svg>1.2K
-                    </span>
-                    <span class="text-gray-600 inline-flex items-center leading-none text-sm">
-                      <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-                        <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path>
-                      </svg>6
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="p-4 md:w-1/3">
-              <div class="h-full border-2 border-gray-200 rounded-lg overflow-hidden">
-                <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="images/books.jpg" alt="blog">
-                <div class="p-6">
-                  <h2 class="tracking-widest text-xs title-font font-medium text-gray-500 mb-1">Preparation Blog</h2>
-                  <h1 class="title-font text-lg font-medium text-gray-900 mb-3">How to prepare for HPAS and other exams</h1>
-                  <p class="leading-relaxed mb-3">Level up your game of preparation for HPAS and rest of Himachal Government Exams.</p>
-                  <div class="flex items-center flex-wrap">
-                    <a class="text-teal-500 inline-flex items-center md:mb-2 lg:mb-0">Learn More
-                      <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M5 12h14"></path>
-                        <path d="M12 5l7 7-7 7"></path>
-                      </svg>
-                    </a>
-                    <span class="text-gray-600 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-300">
-                      <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                        <circle cx="12" cy="12" r="3"></circle>
-                      </svg>1.2K
-                    </span>
-                    <span class="text-gray-600 inline-flex items-center leading-none text-sm">
-                      <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-                        <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path>
-                      </svg>6
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="p-4 md:w-1/3">
-              <div class="h-full border-2 border-gray-200 rounded-lg overflow-hidden">
-                <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="images/river.jpg" alt="blog">
-                <div class="p-6">
-                  <h2 class="tracking-widest text-xs title-font font-medium text-gray-500 mb-1">Polpular Blog</h2>
-                  <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Mysteries within Rivers of Himachal</h1>
-                  <p class="leading-relaxed mb-3">Know everything about you need to know about the rivers of himachal.</p>
-                  <div class="flex items-center flex-wrap ">
-                    <a class="text-teal-500 inline-flex items-center md:mb-2 lg:mb-0">Learn More
-                      <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M5 12h14"></path>
-                        <path d="M12 5l7 7-7 7"></path>
-                      </svg>
-                    </a>
-                    <span class="text-gray-600 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-300">
-                      <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                        <circle cx="12" cy="12" r="3"></circle>
-                      </svg>1.2K
-                    </span>
-                    <span class="text-gray-600 inline-flex items-center leading-none text-sm">
-                      <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-                        <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path>
-                      </svg>6
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-
-
-      <section class="text-gray-700 body-font overflow-hidden">
-        <div class="container px-5 py-24 mx-auto">
-          <div class="flex flex-col text-center w-full mb-20">
-            <h1 class="sm:text-4xl text-3xl font-medium title-font mb-2 text-gray-900">Pricing</h1>
-            <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Plans and Pricing</p>
-          </div>
-          <div class="flex flex-wrap -m-4">
-           
-            <div class="p-4 xl:w-1/3 md:w-1/2 w-full">
-              <div class="h-full p-6 rounded-lg border-2 border-teal-500 flex flex-col relative overflow-hidden">
-                <span class="bg-teal-500 text-white px-3 py-1 tracking-widest text-xs absolute right-0 top-0 rounded-bl">Plan1</span>
-                <h1 class="text-5xl text-gray-900 leading-none flex items-center pb-4 mb-4 border-b border-gray-200">
-                  <span>0₹</span>
-                  <span class="text-lg ml-1 font-normal text-gray-500">then starts at 49₹/mo</span>
-                </h1>
-                <p class="flex items-center text-gray-600 mb-2">
-                  <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-500 text-white rounded-full flex-shrink-0">
-                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
-                      <path d="M20 6L9 17l-5-5"></path>
-                    </svg>
-                  </span>Free for first 7 days
-                </p>
-                <p class="flex items-center text-gray-600 mb-2">
-                  <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-500 text-white rounded-full flex-shrink-0">
-                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
-                      <path d="M20 6L9 17l-5-5"></path>
-                    </svg>
-                  </span>Full quality content
-                </p>
-                <p class="flex items-center text-gray-600 mb-2">
-                  <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-500 text-white rounded-full flex-shrink-0">
-                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
-                      <path d="M20 6L9 17l-5-5"></path>
-                    </svg>
-                  </span>2 mock test provided
-                </p>
-               
-                <button class="flex items-center mt-auto text-white bg-teal-500 border-0 py-2 px-4 w-full focus:outline-none hover:bg-teal-600 rounded">Buy
-                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-auto" viewBox="0 0 24 24">
-                    <path d="M5 12h14M12 5l7 7-7 7"></path>
-                  </svg>
-                </button>
-              </div>
-            </div>
-
-            <div class="p-4 xl:w-1/3 md:w-1/2 w-full">
-              <div class="h-full p-6 rounded-lg border-2 border-teal-500 flex flex-col relative overflow-hidden">
-                <span class="bg-teal-500 text-white px-3 py-1 tracking-widest text-xs absolute right-0 top-0 rounded-bl">Plan2</span>
-                <h1 class="text-5xl text-gray-900 leading-none flex items-center pb-4 mb-4 border-b border-gray-200">
-                  <span>499₹</span>
-                  <span class="text-lg ml-1 font-normal text-gray-500"></span>
-                </h1>
-                <p class="flex items-center text-gray-600 mb-2">
-                  <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-500 text-white rounded-full flex-shrink-0">
-                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
-                      <path d="M20 6L9 17l-5-5"></path>
-                    </svg>
-                  </span>6 months subscription
-                </p>
-                <p class="flex items-center text-gray-600 mb-2">
-                  <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-500 text-white rounded-full flex-shrink-0">
-                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
-                      <path d="M20 6L9 17l-5-5"></path>
-                    </svg>
-                  </span>Full quality content
-                </p>
-                <p class="flex items-center text-gray-600 mb-2">
-                  <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-500 text-white rounded-full flex-shrink-0">
-                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
-                      <path d="M20 6L9 17l-5-5"></path>
-                    </svg>
-                  </span>4000+ MCQs with 24 mock tests
-                </p>
-               
-                <button class="flex items-center mt-auto text-white bg-teal-500 border-0 py-2 px-4 w-full focus:outline-none hover:bg-teal-600 rounded">Buy
-                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-auto" viewBox="0 0 24 24">
-                    <path d="M5 12h14M12 5l7 7-7 7"></path>
-                  </svg>
-                </button>
-              </div>
-            </div>
-
-            <div class="p-4 xl:w-1/3 md:w-1/2 w-full">
-              <div class="h-full p-6 rounded-lg border-2 border-teal-500 flex flex-col relative overflow-hidden">
-                <span class="bg-teal-500 text-white px-3 py-1 tracking-widest text-xs absolute right-0 top-0 rounded-bl">Plan3</span>
-                <h1 class="text-5xl text-gray-900 leading-none flex items-center pb-4 mb-4 border-b border-gray-200">
-                  <span>599₹</span>
-                  <span class="text-lg ml-1 font-normal text-gray-500"></span>
-                </h1>
-                <p class="flex items-center text-gray-600 mb-2">
-                  <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-500 text-white rounded-full flex-shrink-0">
-                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
-                      <path d="M20 6L9 17l-5-5"></path>
-                    </svg>
-                  </span>3 months subscription
-                </p>
-                <p class="flex items-center text-gray-600 mb-2">
-                  <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-500 text-white rounded-full flex-shrink-0">
-                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
-                      <path d="M20 6L9 17l-5-5"></path>
-                    </svg>
-                  </span>Full quality content
-                </p>
-                <p class="flex items-center text-gray-600 mb-2">
-                  <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-500 text-white rounded-full flex-shrink-0">
-                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
-                      <path d="M20 6L9 17l-5-5"></path>
-                    </svg>
-                  </span>4000+ MCQs with 24 mock tests
-                </p>
-               
-                <button class="flex items-center mt-auto text-white bg-teal-500 border-0 py-2 px-4 w-full focus:outline-none hover:bg-teal-600 rounded">Buy
-                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-auto" viewBox="0 0 24 24">
-                    <path d="M5 12h14M12 5l7 7-7 7"></path>
-                  </svg>
-                </button>
-              </div>
-            </div>
-            
-           
-            
-          </div>
-        </div>
-      </section>
-
-
-
-     
-
-      <hr>
-
-
-      <footer class="text-gray-700 body-font">
-        <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
-          
-            <span class="ml-3 text-xl">Made with Love in Himachal</span>
-          
-          
-          <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
-            <a class="text-gray-500">
-              <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+        <div class="w-full md:w-4/12 px-4 mr-auto ml-auto">
+          <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg bg-blue-800">
+            <img alt="..."
+              src = {{ url_for('static',filename ="images/sample/newsletter.gif") }}
+              class="md:w-3/5 h-1/2 md:h-3/5 w-3/5 align-middle rounded-t-lg" />
+            <blockquote class="relative p-8 mb-4">
+              <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 583 95"
+                class="absolute left-0 w-full block" style="height: 95px; top: -94px;">
+                <polygon points="-30,95 583,95 583,65" class="text-blue-800 fill-current"></polygon>
               </svg>
-            </a>
-            <a class="ml-3 text-gray-500">
-              <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-                <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
-              </svg>
-            </a>
-            <a class="ml-3 text-gray-500">
-              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
-                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
-              </svg>
-            </a>
-            <a class="ml-3 text-gray-500">
-              <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
-                <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
-                <circle cx="4" cy="4" r="2" stroke="none"></circle>
-              </svg>
-            </a>
-          </span>
+              <h4 class="text-l font-semibold text-white">
+                Everything delivered to your email
+              </h4>
+
+              <p class="text-md font-light mt-2 text-white">
+                <p class="flex items-center text-gray-200 mb-2">
+                  <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-500 text-white rounded-full flex-shrink-0">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
+                      <path d="M20 6L9 17l-5-5"></path>
+                    </svg>
+                  </span>2500+ MCQ questions (Total)
+                </p>
+                <p class="flex items-center text-gray-200 mb-2">
+                  <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-500 text-white rounded-full flex-shrink-0">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
+                      <path d="M20 6L9 17l-5-5"></path>
+                    </svg>
+                  </span>High quality content
+                </p>
+                
+                <p class="flex items-center text-gray-200 mb-2">
+                  <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-500 text-white rounded-full flex-shrink-0">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
+                      <path d="M20 6L9 17l-5-5"></path>
+                    </svg>
+                  </span>Post Week assessments 
+                </p>
+
+                <p class="flex items-center text-gray-200 mb-2">
+                  <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-500 text-white rounded-full flex-shrink-0">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
+                      <path d="M20 6L9 17l-5-5"></path>
+                    </svg>
+                  </span>Himachal GK and Current Affairs
+                </p>
+              </p>
+            </blockquote>
+          </div>
         </div>
-      </footer>
+
+      </div>
+    </div>
+  </section>
+
+
+  <div class="flex text-gray-200 bg-gray-800">
+
+    <div class="container px-8 mx-auto flex flex-wrap flex-col md:flex-row justify-between">
+      <!--Left Col-->
+      <div class="flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left">
+        <p class="uppercase text-l px-2 py-4 tracking-loose w-full">Hi, I am a newsletter.</p>
+        <h1 class="my-4 text-3xl font-bold leading-tight">Let me help you read daily, I guarantee you important content only.</h1>
+        <!-- <p class="leading-normal text-2xl mb-8">Sub-hero message, not too long and not too short. Make it just right!</p> -->
+
+        <button
+          class="mx-auto lg:mx-0 hover:underline bg-blue-800 text-gray-300 transition duration-200 ease-in-out transform hover:-translate-y-1 hover:text-gray-600 hover:scale-110 hover:bg-blue-900 font-bold rounded-full my-6 py-4 px-8 shadow-lg">Subscribe me</button>
+
+      </div>
+      <!--Right Col-->
+      <div class="w-full flex md:w-3/5 py-6 text-center  justify-center mb-10 mt-4 md:-mt-8">
+        <img class="w-4/5 h-1/2 md:w-1/3 z-30 rounded" src={{ url_for('static',filename="images/sample/sample.png" ) }}>
+      </div>
+
+
+    </div>
+
+  </div>
+  <div class="relative mb-12 -mt-12 md:-mt-24 lg:-mt-24">
+  </div>
+
+  <!-- Blog Section... -->
+  <section class="border-b py-8 bg-gray-300">
+
+    <div class="container px-5 py-10 mx-auto rounded-lg">
+
+      <div class="flex flex-wrap -m-4">
+
+        <div class="p-4 md:w-1/3">
+          <div class="flex flex-col h-auto rounded-lg overflow-hidden bg-blue-800">
+            <img class="lg:h-48 md:h-36 w-full object-fit object-center" src={{
+              url_for('static',filename="images/mountains.jpg" ) }} alt="blog">
+              <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 583 95"
+                class="absolute left-0 w-full block" style="height: 95px; top: -94px;">
+                <polygon points="-30,95 583,95 583,65" class="text-blue-800 fill-current"></polygon>
+              </svg>
+            <div class="py-2 px-6">
+              
+              <h2 class="tracking-widest text-xs text-gray-200 font-semibold mb-1">Polpular Blog</h2>
+              <h1 class="text-l text-gray-200 mb-3">Beauty of Himachal Pradesh </h1>
+              <p class="leading-relaxed text-gray-200 mb-3">What makes Himachal Pradesh distinctive. Read the article and check out.
+              </p>
+              <div class="flex items-center flex-wrap ">
+                <a href="/blogs/blog1" class=" inline-flex items-center md:mb-2 lg:mb-0">
+
+                  <button
+                    class="rounded px-4 py-2 bg-blue-700 text-gray-300 transition duration-200 ease-in-out transform hover:-translate-y-1 hover:text-gray-600 hover:scale-110 hover:bg-blue-900">
+                    Read <br> </button>
+
+                </a>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-4 md:w-1/3">
+          <div class="flex flex-col h-auto rounded-lg overflow-hidden bg-blue-800">
+            <img class="lg:h-48 md:h-36 w-full object-cover object-center" src={{
+              url_for('static',filename="images/books.jpg" ) }} alt="blog">
+            <div class="px-6 py-2">
+              <h2 class="tracking-widest text-xs text-gray-200 font-semibold mb-1">Preparation Article</h2>
+              <h1 class="text-l text-gray-200 mb-3">Himachal State Exams</h1>
+              <p class="leading-relaxed text-gray-200 mb-3">Check out the various type of state exams and how <b>myHPGk</b> helps you
+                to prepare.</p>
+              <div class="flex items-center flex-wrap">
+                <a href="/blogs/blog2" class=" inline-flex items-center md:mb-2 lg:mb-0">
+
+                  <button
+                    class="rounded px-4 py-2 bg-blue-700 text-gray-300 transition duration-200 ease-in-out transform hover:-translate-y-1 hover:text-gray-600 hover:scale-110 hover:bg-blue-900">
+                    Read <br> </button>
+
+
+                </a>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-4 md:w-1/3">
+          <div class="flex flex-col h-auto rounded-lg overflow-hidden bg-blue-800">
+            <img class="lg:h-48 md:h-36 w-full object-cover object-center" src={{
+              url_for('static',filename="images/river.jpg" ) }} alt="blog">
+            <div class="px-6 py-2">
+              <h2 class="tracking-widest text-xs text-gray-200 font-semibold mb-1">Polpular Article</h2>
+              <h1 class="text-l font-medium text-gray-200 mb-3">Himachal Pradesh River System</h1>
+              <p class="leading-relaxed text-gray-200 mb-3">Himachal's vast river network. Check out the river
+                system of the state.</p>
+              <div class="flex items-center flex-wrap ">
+                <a class="inline-flex items-center md:mb-2 lg:mb-0">
+                  <button
+                    class="rounded px-4 py-2 bg-blue-700 text-gray-300 transition duration-200 ease-in-out transform hover:-translate-y-1 hover:text-gray-600 hover:scale-110 hover:bg-blue-900">
+                    Read</button>
+
+                </a>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+<!-- Plan Section-- -->
+<div class="grid text-gray-600 py-2 bg-gray-800">
+
+  <form action="/plan0" method="post">
+    <div class="container px-8 mx-auto flex flex-wrap md:flex-row flex-col md:justify-between items-center align-items">
+      <!--Left Col-->
+      <div class="md:w-1/3 w-auto items-center mt-2  justify-center">
+        <div>
+          <input class="bg-gray-300 rounded border border-gray-800 focus:outline-none focus:border-gray-300 text-base px-4 py-2 mb-4" name = "email1" placeholder="  Your email id Please" type="email">
+          </div>
+      </div>
+  <!--Right Col-->
+      <div class="flex justify-center items-start items-center text-center md:text-left">
+        <button
+          class="mx-auto lg:mx-0 hover:underline bg-blue-800 text-gray-300 transition duration-200 ease-in-out transform hover:-translate-y-1 hover:text-gray-600 hover:scale-110 hover:bg-blue-900 font-bold rounded-full py-2 px-8 shadow-lg">Subscribe me</button>
+      </div>
+
+    </div>
+  </form>
+
+</div>
+<!--  -->
+
+<div class="flex py-5 bg-gray-300"></div>
+
+
+  <footer
+    class="hpgk grid md:flex md:flex-row items-center justify-center md:justify-between bg-gray-900 overflow-hidden">
+
+    <div class="px-4 py-2 inline-flex text-gray-500 justify-center">
+      <span class="ml-3 text-xl"> Made with </span> <svg class="heart" viewBox="0 0 32 29.6">
+        <path
+          d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z" />
+      </svg> <span class="ml-2 text-xl">in Himachal</span>
+    </div>
+
+    <div class="md:mr-4 md:px-2 py-2 inline-flex justify-center">
+
+      <a
+        class="transition duration-200 ease-in-out transform hover:-translate-y-1 hover:text-black hover:scale-150 text-gray-500 ">
+        <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5"
+          viewBox="0 0 24 24">
+          <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+        </svg>
+      </a>
+      <a
+        class="transition duration-200 ease-in-out transform hover:-translate-y-1 hover:text-black hover:scale-150 ml-3 text-gray-500">
+        <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5"
+          viewBox="0 0 24 24">
+          <path
+            d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z">
+          </path>
+        </svg>
+      </a>
+      <a
+        class="transition duration-200 ease-in-out transform hover:-translate-y-1 hover:text-black hover:scale-150 ml-3 text-gray-500">
+        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          class="w-5 h-5" viewBox="0 0 24 24">
+          <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+          <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+        </svg>
+      </a>
+      <a
+        class="transition duration-200 ease-in-out transform hover:-translate-y-1 hover:text-black hover:scale-150 ml-3 text-gray-500">
+        <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"
+          class="w-5 h-5" viewBox="0 0 24 24">
+          <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z">
+          </path>
+          <circle cx="4" cy="4" r="2" stroke="none"></circle>
+        </svg>
+      </a>
+
+    </div>
+
+  </footer>
 
 </body>
+<script>
+  let hamburger = document.getElementById('hamburgerbtn');
+
+  let mobileMenu = document.getElementById('mobileMenu');
+
+  hamburger.addEventListener('click', function () {
+    mobileMenu.classList.toggle('active');
+
+  });
+</script>
+
+
+
+
+
 </html>
